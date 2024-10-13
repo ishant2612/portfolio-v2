@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Lexend:wght@100..900&display=swap");
+.landing {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      153deg,
+      rgba(35, 53, 84, 0) 16.79%,
+      rgba(168, 168, 168, 0.28) 54.38%,
+      rgba(0, 0, 0, 0.55) 91.79%
+    ),
+    linear-gradient(90deg, #112240 0%, #122c51 50.64%, #112240 102.05%);
+  position: relative;
+  overflow-y: hidden;
+}
+
+.eclipsel,
+.eclipser {
+  position: absolute;
+  z-index: 0;
+  width: 55%;
+}
+
+.eclipsel {
+  bottom: 0;
+  z-index: 0;
+}
+.eclipser {
+  right: 0;
+  z-index: 0;
+}
+
+.head {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh 5vw;
+}
+.head img {
+  z-index: 2;
+  width: 3.25rem;
+  height: 3.3125rem;
+  flex-shrink: 0;
+}
+
+.menu {
+  color: #fff;
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  top: 3.5vh;
+  right: 5vw;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 10; */
+  /* background-color: red; */
+}
+
+.textcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: -10vh; */
+  /* background-color: red; */
+}
+
+.scroller {
+  height: 30%;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+.sub {
+  color: #41b096;
+  font-family: Lexend;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  z-index: 10;
+}
+
+.name {
+  z-index: 10;
+
+  -webkit-text-stroke: 2px rgb(255, 255, 255); /* 2px black stroke around text */
+  -webkit-text-fill-color: rgba(255, 0, 0, 0);
+  font-family: Koulen;
+  font-size: 7.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 0;
+  /* background-color: red; */
+  letter-spacing: 0.9975rem;
+  text-shadow: 0px 5px 1.4px #0000003f;
+}
+
+@media screen and (max-width: 575px) {
+  .landing {
+    height: 100svh;
+  }
+  .eclipser {
+    width: 70%;
+  }
+  .eclipsel {
+    bottom: 0;
+    /* right: -10vh; */
+  }
+  .head {
+    justify-content: start;
+    padding: 3vh 10vw;
+  }
+  .head img {
+    width: 2.25rem;
+    height: 2.3125rem;
+    /* justify-content: flex-end; */
+  }
+  .menu {
+    right: 10vw;
+  }
+
+  .scroller {
+    display: none;
+  }
+  .textcon {
+    margin-bottom: 50%;
+  }
+  .sub {
+    font-size: 1rem;
+  }
+  .name {
+    flex-wrap: nowrap;
+    /* font-size: 2rem; */
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.39375rem;
+  }
+}
