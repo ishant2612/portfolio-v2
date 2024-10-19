@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import logo from "../Resources/logo.svg";
 import MenuIcon from "@mui/icons-material/Menu";
-const Landing = () => {
+const Landing = ({ operation }) => {
   var opening = gsap.timeline();
   useGSAP(() => {
     opening.from(".head", {
@@ -52,6 +52,7 @@ const Landing = () => {
       stagger: 0.5,
     });
   });
+
   return (
     <div className="landing">
       <img src={eclipsel} alt="" className="eclipsel" />
@@ -59,7 +60,7 @@ const Landing = () => {
       <div className="head">
         <img src={logo} alt="" />
       </div>
-      <MenuIcon className="menu" style={{ fontSize: "1.6rem" }} />
+      <MenuIcon className="menu" onClick={operation} />
       <div className="hero">
         <div className="textcon">
           <p className="sub">Front-End Developer & ML Enthusiast</p>

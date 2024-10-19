@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Lexend:wght@100..900&display=swap");
+.menu-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0%;
+  z-index: 10;
+  /* background-color: rgb(38, 38, 38); */
+}
+
+.menu-icon {
+  cursor: pointer;
+  color: white;
+  /* position: sticky; */
+  top: 5vh;
+}
+
+.strips {
+  height: 12.5%;
+  width: 0%;
+  background-color: #1b1b1b;
+  font-family: "Koulen", sans-serif;
+  /* display: none; */
+}
+
+.strips p {
+  font-size: 3.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0;
+  position: relative; /* For positioning the ::after element */
+  transition: all 0.3s ease;
+  cursor: pointer; /* Smooth transition */
+}
+
+.strips p::after {
+  content: "";
+  position: absolute;
+  left: -1vw;
+  right: 1vw;
+  bottom: 50%; /* Center the line vertically across the text */
+  height: 6px; /* Thickness of the line */
+  background-color: #348a76; /* Color of the line */
+  width: 0; /* Start with no width */
+  transition: width 0.3s ease; /* Animation for the line */
+}
+
+.strips p:hover::after {
+  width: 100%; /* Full width when hovered */
+  background: #348a76;
+}
+.strips p:hover {
+  color: #348a76;
+}
+
+.strips:nth-child(1),
+.strips:nth-child(7) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 25%;
+  /* padding: 3vh 5%; */
+  /* display: none; */
+}
+
+.strips:nth-child(2),
+.strips:nth-child(3),
+.strips:nth-child(4),
+.strips:nth-child(5),
+.strips:nth-child(6) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* height: 25%; */
+  /* padding: 3vh 5%; */
+  /* display: none; */
+}
+
+.close {
+  /* display: none; */
+  color: white;
+  margin-right: 5vw;
+  cursor: pointer;
+  margin-bottom: 13vh;
+  /* margin-top: 1vh; */
+}
