@@ -6,37 +6,37 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const pathRef = useRef(null);
+  // const pathRef = useRef(null);
 
-  useEffect(() => {
-    const path = pathRef.current;
-    const pathLength = path.getTotalLength(); // Get the total length of the SVG path
+  // useEffect(() => {
+  //   const path = pathRef.current;
+  //   const pathLength = path.getTotalLength(); // Get the total length of the SVG path
 
-    // Set initial stroke properties
-    gsap.set(path, {
-      strokeDasharray: pathLength,
-      strokeDashoffset: pathLength, // Hide the stroke initially
-      stroke: "#64FFDA", // Set a stroke color that complements the fill
-      strokeWidth: 10, // Adjust stroke width as needed
-      fill: "none", // Set fill to none so stroke is visible
-    });
+  //   // Set initial stroke properties
+  //   gsap.set(path, {
+  //     strokeDasharray: pathLength,
+  //     strokeDashoffset: pathLength, // Hide the stroke initially
+  //     stroke: "#64FFDA", // Set a stroke color that complements the fill
+  //     strokeWidth: 10, // Adjust stroke width as needed
+  //     fill: "none", // Set fill to none so stroke is visible
+  //   });
 
-    // Scroll-triggered animation
-    gsap.to(path, {
-      strokeDashoffset: 0, // Draw the path
-      ease: "none", // No easing for a steady drawing effect
-      scrollTrigger: {
-        trigger: ".about-wrapper", // Trigger element (scrolling starts when the .about-wrapper enters viewport)
-        start: "top 80%", // Animation starts when 80% of the viewport height is reached
-        end: "bottom 20%", // Animation ends when the path leaves 20% of the viewport from the bottom
-        scrub: 1, // Sync animation with scroll for smooth effect
-      },
-    });
-  }, []);
+  //   // Scroll-triggered animation
+  //   gsap.to(path, {
+  //     strokeDashoffset: 0, // Draw the path
+  //     ease: "none", // No easing for a steady drawing effect
+  //     scrollTrigger: {
+  //       trigger: ".about-wrapper", // Trigger element (scrolling starts when the .about-wrapper enters viewport)
+  //       start: "top 80%", // Animation starts when 80% of the viewport height is reached
+  //       end: "bottom 20%", // Animation ends when the path leaves 20% of the viewport from the bottom
+  //       scrub: 1, // Sync animation with scroll for smooth effect
+  //     },
+  //   });
+  // }, []);
 
   return (
     <div className="about-wrapper">
-      <svg
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         className="line1"
         viewBox="0 0 1089 648"
@@ -123,7 +123,7 @@ const About = () => {
             <stop offset="1" stopColor="#3C9983" />
           </linearGradient>
         </defs>
-      </svg>
+      </svg> */}
     </div>
   );
 };

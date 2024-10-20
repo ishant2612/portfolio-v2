@@ -38,21 +38,22 @@
 .strips p::after {
   content: "";
   position: absolute;
-  left: -1vw;
-  right: 1vw;
-  bottom: 50%; /* Center the line vertically across the text */
+  left: 0;
+  right: 0;
+  bottom: 20%; /* Center the line vertically across the text */
   height: 6px; /* Thickness of the line */
-  background-color: #348a76; /* Color of the line */
-  width: 0; /* Start with no width */
-  transition: width 0.3s ease; /* Animation for the line */
+  background-color: #ffffff; /* Color of the line */
+  width: 100%; /* Start with no width */
+  transition: all 0.3s ease; /* Animation for the line */
 }
 
 .strips p:hover::after {
+  bottom: 50%;
   width: 100%; /* Full width when hovered */
-  background: #348a76;
+  background: #41b096;
 }
 .strips p:hover {
-  color: #348a76;
+  color: #41b096;
 }
 
 .strips:nth-child(1),
