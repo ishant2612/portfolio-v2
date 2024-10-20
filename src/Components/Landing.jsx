@@ -11,10 +11,19 @@ const Landing = ({ operation }) => {
   var opening = gsap.timeline();
   useGSAP(() => {
     opening.from(".head", {
+      position: "absolute",
+      top: "50vh",
+      left: "50vw",
+      transform: "translate(-50%, -50%)",
       opacity: 0,
       duration: 2,
       ease: "expo.inOut",
     });
+    opening.to(".landing", {
+      background:
+        "linear-gradient(153deg,rgba(35, 53, 84, 0) 16.79%,rgba(168, 168, 168, 0.28) 54.38%,rgba(0, 0, 0, 0.55) 91.79%),linear-gradient(90deg, #112240 0%, #122c51 50.64%, #112240 102.05%)",
+    });
+
     opening.from(
       ".eclipsel",
       {
