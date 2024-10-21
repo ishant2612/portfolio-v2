@@ -52,18 +52,18 @@
 }
 
 .boxes {
-  height: 90%;
-  width: 100%;
-  padding: 1vh 15vw;
+  /* width: 100%; */
+  padding: 0 15vw;
+  height: 60%;
   /* background-color: red; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 4vh;
 }
 
 .sum-box {
-  /* height: 35%; */
   width: 100%;
   border-radius: 2rem;
   background: rgba(19, 42, 75, 0.4);
@@ -102,8 +102,70 @@
 .box {
   height: 100%;
   width: 50%;
+  padding: 5vh 2vw;
   border-radius: 2rem;
   background: rgba(19, 42, 75, 0.4);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.box span {
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 4.3125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.box p {
+  color: #fff;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.7),
+    /* top left shadow */ -1px -1px 0px rgba(255, 255, 255, 0.3);
+  font-family: "Roboto";
+  font-size: 2.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* text-decoration: line-through; */
+}
+
+.skills {
+  width: 100%;
+  padding: 6vh 0;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Koulen";
+  font-size: 2.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.skills p {
+  background: linear-gradient(90deg, #fff 0%, #37a78c 50.24%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  /* letter-spacing: 0.3rem; */
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  /* background-color: red; */
+}
+
+.skills .i {
+  height: 2.03rem;
+  width: 0.4vw;
+  margin-bottom: 0.2vh;
+  background: linear-gradient(90deg, #3c9983 0%, #3c9983 50.24%, #41b096 100%);
 }
