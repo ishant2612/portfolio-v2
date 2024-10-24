@@ -3,49 +3,55 @@ import "../Styles/About.css";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Skills from "./Skills";
-
+import eclipser from "../Resources/Ellipse-right.svg";
+import eclipsel from "../Resources/Ellipse-left.svg";
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  // Create refs for the sections and the "I" div
-  // const aboutRef = useRef(null);
-  // const iRef = useRef(null);
+  useGSAP(() => {
+    gsap.from(".sum-box", {
+      opacity: 0,
 
-  // useLayoutEffect(() => {
-  //   // Create the timeline and animations inside the useLayoutEffect hook
-  //   const ctx = gsap.context(() => {
-  //     // GSAP animation for the "I" div
-  //     gsap
-  //       .timeline({
-  //         scrollTrigger: {
-  //           trigger: aboutRef.current, // Trigger on the about section
-  //           start: "top top", // Start at the top of the section
-  //           end: "+=5000", // Adjust duration of the pinned animation
-  //           scrub: true, // Smooth animation based on scroll
-  //           pin: aboutRef.current, // Pin the about section
-  //           pinSpacing: false,
-  //           // markers: true, // Remove markers in production
-  //         },
-  //       })
-  //       .to(iRef.current, {
-  //         scale: 1000, // Scale up the "I" div
-  //         duration: 2,
-  //         ease: "power2.out", // Smooth easing
-  //         backgroundColor:
-  //           "radial-gradient(38.98% 50% at 50% 50%, #64FFDA 0%, #FFF 85.07%);", // You can also animate background or color here
-  //       })
-  //       .to(iRef.current, {
-  //         scale: 1, // Scale it back down
-  //         duration: 3,
-  //         ease: "power2.out",
-  //       });
-  //   });
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".sum-box",
+        start: "top 25%",
+        end: "bottom bottom",
+        // markers: true,
+        toggleActions: "play none none reverse",
+      },
+    });
+    gsap.from(".box", {
+      opacity: 0,
 
-  //   return () => ctx.revert(); // Cleanup when the component unmounts
-  // }, []);
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".box",
+        start: "top 55%",
+        end: "bottom bottom",
+        // markers: true,
+        toggleActions: "play none none reverse",
+      },
+    });
+    gsap.from(".skills", {
+      opacity: 0,
+
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".skills",
+        start: "top 90%",
+        end: "bottom bottom",
+        // markers: true,
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
 
   return (
     <div className="about-wrapper">
+      <img src={eclipsel} alt="" className="eclipsela" />
+      <img src={eclipser} alt="" className="eclipsera" />
       <div className="title">
         <p>About</p>
       </div>
@@ -76,9 +82,7 @@ const About = () => {
         </div>
       </div>
       <div className="skills">
-        <p>
-          SK<div className="i"></div>LLS
-        </p>
+        <p>SKILLS</p>
       </div>
     </div>
   );

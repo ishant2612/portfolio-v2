@@ -88,3 +88,9 @@
   margin-bottom: 13vh;
   /* margin-top: 1vh; */
 }
+
+@media screen and (max-width: 575px) {
+  .menu-wrapper {
+    height: 100svh;
+  }
+}
