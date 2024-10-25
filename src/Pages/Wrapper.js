@@ -7,6 +7,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { Pin } from '@mui/icons-material'
+import Projects from '../Components/Projects'
 const Wrapper = () => {
 
     gsap.registerPlugin(ScrollTrigger);
@@ -56,6 +57,7 @@ const Wrapper = () => {
             <Menu close={closeSide} />
             <Landing operation={openSide} />
             <About />
+            <Projects />
         </div>
     )
 }
