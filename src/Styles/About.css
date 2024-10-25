@@ -1,8 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Lexend:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.about {
+  height: 150vh;
+  width: 100%;
+  /* background: linear-gradient(
+      0deg,
+      rgba(35, 53, 84, 0) 0%,
+      rgba(0, 0, 0, 0.55) 100%,
+      rgba(168, 168, 168, 0.28) 100%
+    ),
+    linear-gradient(90deg, #112240 0%, #122c51 50.64%, #112240 102.05%); */
+}
 .about-wrapper {
   height: 100vh;
   width: 100%;
+  padding: 5vh 0 0 0;
   background: linear-gradient(
       0deg,
       rgba(35, 53, 84, 0) 0%,
@@ -11,7 +23,8 @@
     ),
     linear-gradient(90deg, #112240 0%, #122c51 50.64%, #112240 102.05%);
   /* box-shadow: 0px 5px 5px 0px #000 inset; */
-  z-index: 0;
+  z-index: 10;
+  /* z-index: 4; */
   overflow: hidden;
   position: relative;
 }
@@ -142,31 +155,50 @@
 }
 
 .skills {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
   width: 100%;
-  padding: 6vh 0;
-  /* background-color: red; */
+
+  padding: 1vh 0;
+  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-family: "Koulen";
+  clip-path: circle(10% at 50% 100%);
+  background: radial-gradient(38.98% 50% at 50% 50%, #64ffda 0%, #fff 85.07%);
+  /* font-family: "Koulen";
   font-size: 2.9375rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%); */
 }
 
 .skills p {
-  background: linear-gradient(90deg, #fff 0%, #37a78c 50.24%, #fff 100%);
+  background: #0e2341;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 3rem; /* Adjust font size */
+  font-size: 2rem; /* Adjust font size */
   font-weight: bold;
   letter-spacing: 0.3rem;
-
+  z-index: 0;
   /* background-color: red; */
+}
+
+.skill-box {
+  /* background-color: red; */
+  /* height: 20vh; */
+  /* width: 20vh; */
+  margin-top: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 50%; */
+  /* z-index: 0; */
 }
 
 @media screen and (max-width: 575px) {
