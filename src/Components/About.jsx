@@ -17,8 +17,8 @@ const About = () => {
         trigger: ".about-wrapper",
         start: "top top",
         end: "+=100", // Keeps it pinned for 400px scroll distance
-        scrub: 1,
-        pin: true,
+        scrub: 2,
+        // pin: true,
         pinSpacing: false,
       },
     });
