@@ -67,7 +67,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about-wrapper">
+    <div className="about-wrapper" id="about">
       <img loading="lazy" src={eclipsel} alt="" className="eclipsela" />
       <img loading="lazy" src={eclipser} alt="" className="eclipsera" />
       <div className="title">
@@ -99,7 +99,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="skills">
+      <div className="skills" id="skills">
         <div className="skill-box">
           <p>SKILLS</p>
           <div className="bubbles"></div>

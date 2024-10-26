@@ -3,7 +3,6 @@ import "../Styles/Landing.css";
 import eclipser from "../Resources/Ellipse-right.svg";
 import eclipsel from "../Resources/Ellipse-left.svg";
 import gsap from "gsap";
-import { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import logo from "../Resources/logo.svg";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -43,7 +42,7 @@ const Landing = ({ operation }) => {
       ".menu",
       {
         opacity: 0,
-
+        duration: 2,
         x: "200%",
         ease: "expo.inOut",
       },
@@ -59,7 +58,7 @@ const Landing = ({ operation }) => {
   });
 
   return (
-    <div className="landing">
+    <div className="landing" id="home">
       <img src={eclipsel} alt="" className="eclipsel" />
       <img src={eclipser} alt="" className="eclipser" />
       <div className="head">
