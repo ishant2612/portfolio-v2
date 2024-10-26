@@ -10,11 +10,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 const Landing = ({ operation }) => {
   var opening = gsap.timeline();
   useGSAP(() => {
-    opening.from(".head", {
-      opacity: 0,
-      duration: 2,
-      ease: "expo.inOut",
-    });
+    opening.from(
+      ".head",
+      {
+        opacity: 0,
+        duration: 2,
+        ease: "expo.inOut",
+      },
+      "bg"
+    );
 
     opening.from(
       ".eclipsel",

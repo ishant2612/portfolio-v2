@@ -1,63 +1,75 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import "../Styles/About.css";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Skills from "./Skills";
 import eclipser from "../Resources/Ellipse-right.svg";
 import eclipsel from "../Resources/Ellipse-left.svg";
-import { useGSAP } from "@gsap/react";
-import Projects from "./Projects";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  useGSAP(() => {
-    // Pin the About section and set up a timeline
-    const aboutTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-wrapper",
-        start: "top top",
-        end: "+=100", // Keeps it pinned for 400px scroll distance
-        scrub: 2,
-        // pin: true,
-        pinSpacing: false,
-      },
-    });
+  useEffect(() => {
+    let rafId; // Holds the requestAnimationFrame ID
 
-    // Animation for the skills section, triggered within the pinned timeline
-    aboutTimeline
-      .to(
-        ".skills",
-        {
-          clipPath: "circle(100% at 50% 50%)", // Expands the clip-path
-          duration: 1,
+    const animate = () => {
+      const aboutTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".about-wrapper",
+          start: "top top",
+          end: "+=100", // Keeps it pinned for 100px scroll distance
+          scrub: 2,
+          pinSpacing: false,
         },
-        "same"
-      )
-      .to(
-        ".skill-box p",
-        {
-          marginTop: "0vh",
-        },
-        "same"
-      );
+      });
 
-    // Reversing the animation on scroll-up
-    gsap.to(".skills", {
-      clipPath: "circle(10% at 50% 100%)", // Reverses to original
-      scrollTrigger: {
-        trigger: ".about-wrapper",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-        toggleActions: "play none reverse none", // Allows smooth reverse on scroll-up
-      },
-    });
-  });
+      // Animation for expanding skills section
+      aboutTimeline
+        .to(
+          ".skills",
+          {
+            clipPath: "circle(100% at 50% 50%)", // Expands clip-path to cover screen
+            duration: 1,
+          },
+          "same"
+        )
+        .to(
+          ".skill-box p",
+          {
+            marginTop: "0vh",
+          },
+          "same"
+        );
+
+      // Animation to reverse on scroll-up
+      gsap.to(".skills", {
+        clipPath: "circle(10% at 50% 100%)", // Reverts back
+        scrollTrigger: {
+          trigger: ".about-wrapper",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+          toggleActions: "play none reverse none",
+        },
+      });
+    };
+
+    const startAnimation = () => {
+      rafId = requestAnimationFrame(animate);
+    };
+
+    // Start the animation on initial mount
+    startAnimation();
+
+    // Cleanup function to cancel requestAnimationFrame
+    return () => {
+      cancelAnimationFrame(rafId);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
     <div className="about-wrapper">
-      <img src={eclipsel} alt="" className="eclipsela" />
-      <img src={eclipser} alt="" className="eclipsera" />
+      <img loading="lazy" src={eclipsel} alt="" className="eclipsela" />
+      <img loading="lazy" src={eclipser} alt="" className="eclipsera" />
       <div className="title">
         <p>About</p>
       </div>
