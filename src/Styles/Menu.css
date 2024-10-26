@@ -33,6 +33,10 @@
   position: relative; /* For positioning the ::after element */
   transition: all 0.3s ease;
   cursor: pointer; /* Smooth transition */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-user-select: none; /* Safari */
+  user-select: none; /* Disables text selection */
 }
 
 .strips p::after {
