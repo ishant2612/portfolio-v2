@@ -28,6 +28,7 @@ const About = () => {
           {
             clipPath: "circle(100% at 50% 50%)", // Expands clip-path to cover screen
             duration: 1,
+            paddingTop: "10vh",
           },
           "same"
         )
@@ -35,6 +36,14 @@ const About = () => {
           ".skill-box p",
           {
             marginTop: "0vh",
+          },
+          "same"
+        )
+        .to(
+          ".bubbles",
+          {
+            opacity: 1,
+            duration: 0.5,
           },
           "same"
         );
@@ -102,7 +111,9 @@ const About = () => {
       <div className="skills" id="skills">
         <div className="skill-box">
           <p>SKILLS</p>
-          <div className="bubbles"></div>
+          <div className="bubbles">
+           
+          </div>
         </div>
       </div>
     </div>
@@ -110,3 +121,4 @@ const About = () => {
 };
 
 export default About;
+

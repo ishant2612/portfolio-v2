@@ -5,16 +5,18 @@
   background: #ffffff;
   color: black;
   margin-top: 30vh;
+
 }
 
 .project-title {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   /* background-color: red; */
   padding: 4vh 0;
 }
-.project-title p {
+.project-title-text {
   /* font-family: Koulen;
   font-size: 6.125rem;
   font-style: normal;
@@ -39,3 +41,38 @@
   z-index: 0;
   text-transform: uppercase;
 }
+
+.project-sec-title{
+  /* font-size: 1.2rem; */
+  background: #0e2341;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  z-index: 0;
+  text-transform: uppercase;
+  text-align: start;
+}
+.project-sec{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  /* align-items: center; */
+  /* justify-content: center; */
+  
+  /* height: 90vh; */
+  width: 90vw;
+  padding: 5vh 3vw;
+  /* background-color: red; */
+  
+}
+
+.pros{
+  height: 22vh;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #11264617;
+}
+

@@ -193,6 +193,15 @@
   /* z-index: 0; */
 }
 
+.bubbles{
+  height: 80vh;
+  opacity: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
 @media screen and (max-width: 575px) {
   .about-wrapper {
     height: 100vh;
